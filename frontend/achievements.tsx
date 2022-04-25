@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import styles from './achievements.module.css';
 
 
-export default function AchievementsPage() {
+export function AchievementsPage() {
   return (
-    <div>
+    <div className={styles.title}>
       <h1>
         ACHIEVEMENTS PAGE
       </h1>

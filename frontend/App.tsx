@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import HomePage from './home';
-import AchievementsPage from './achievements';
+import { LandingPage } from './landing';
+import { AchievementsPage } from './achievements';
 
-function App() {
+function app() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/" element={<LandingPage/>}/>
         <Route path="/achievements" element={<AchievementsPage/>}/>
       </Routes>
     </Router>
   );
 }
 
-export default App;
+export default app;

@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   mode: "development",
   // use index.jsx as entry pt
-  entry: ["@babel/polyfill", "./frontend/src/index.tsx"],
+  entry: ["@babel/polyfill", "./frontend/index.tsx"],
   // our whole react app will be compiled into one file, ./dist/bundle.js
   output: {
       filename: "bundle.js",
@@ -25,6 +25,11 @@ module.exports = {
                 //}
               },
               exclude: /node_modules/,
+          },
+          {
+            test: /\.css$/i,
+            // style loader is not ideal because it takes the css and loads it into a style tag, there is mini-css-extract-plugin that creates another css file and adds a link tag to the bundle instead of a style tag: https://www.carlrippon.com/using-css-react-typescript-with-webpack5/ for deets
+            use: ["style-loader", "css-loader"],
           }
       ]
   },
